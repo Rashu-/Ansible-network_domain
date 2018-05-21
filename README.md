@@ -41,9 +41,9 @@ Please report any issues or send PR.
     system_domain_global:  
       domain_lookup: true               # by default it is false - disabled
       domain_name:                      # domain name suffix for this node
-        - vrf: management 				# vrf for this name server
+        - vrf: management               # vrf for this name server
           name: oob.com
-        - vrf: 							# don't add any value to be added to the default vrf
+        - vrf:                          # don't add any value to be added to the default vrf
           name: abc.com
       domain_search:                    # domain suffix to search when performing DNS resolution
         - vrf: management 				
