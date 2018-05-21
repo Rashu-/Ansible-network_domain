@@ -1,5 +1,4 @@
 # Network Domain Settings
---------
 
 Ansible role which defines domain servers and global domain settings for networking devices. 
 
@@ -10,7 +9,7 @@ See the examples below for details.
 Please report any issues or send PR.
 
 ## Examples
---------
+
 ```yaml
 ---
 
@@ -56,7 +55,6 @@ Please report any issues or send PR.
 ```
 
 ## Role variables
---------
 
 ```yaml
 # Define the domain global vars to be configured ( see README for examples)
@@ -68,12 +66,10 @@ domain_servers: { }
 
 
 ## License
---------
 
 Apache
 
 
 ## Author
---------
 
 Dan Murarasu
