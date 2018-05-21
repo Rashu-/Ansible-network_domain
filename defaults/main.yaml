@@ -1,0 +1,7 @@
+---
+
+# Define the domain global vars to be configured ( see README for examples)
+system_domain_global: { }
+
+# Define the dns servers to be used ( see README for examples)
+domain_servers: { }

@@ -1,0 +1,30 @@
+---
+
+- name: Check network device OS
+  assert:
+    that: >
+      ansible_network_os == 'nxos' or
+      ansible_network_os == 'ios'
+    msg: "Network device OS not defined or not supported by this role: {{ ansible_network_os }}"
+
+- name: Configure nxos domain global settings
+  nxos_system:
+    domain_lookup: "{{ system_domain_global.domain_lookup | default(false) }}"    
+    domain_name:  "{{ system_domain_global.domain_name | default(omit) }}" 
+    domain_search: "{{ system_domain_global.domain_search | default(omit) }}" 
+  when: >
+    ansible_network_os == 'nxos' 
+  tags: 
+    - domain_config
+    - nxos
+
+- name: Configure nxos domain servers
+  nxos_system:
+    state: present
+    name_servers: "{{ item.value | default(omit) }}"
+  with_dict: "{{ domain_servers }}"
+  when: >
+    ansible_network_os == 'nxos'     
+  tags: 
+    - domain_config
+    - nxos
