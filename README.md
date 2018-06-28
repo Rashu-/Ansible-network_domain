@@ -17,8 +17,7 @@ Please report any issues or send PR.
   hosts: switches
   vars:
     domain_servers:
-      srv1:
-        - ip: 1.1.1.1
+        - server: 1.1.1.1
   roles:
     - Ansible-network_domain
 
@@ -26,11 +25,9 @@ Please report any issues or send PR.
   hosts: switches
   vars:
     domain_servers:
-      srv1:
-        - ip: 1.1.1.1
-          vrf: mgmt
-      srv2:
-        - ip: 8.8.8.8
+        - server: 1.1.1.1
+          vrf: mgmt      
+        - server: 8.8.8.8
           vrf: prod
   roles:
     - Ansible-network_domain
